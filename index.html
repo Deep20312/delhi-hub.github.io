@@ -3,23 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Delhi Travel Guide | Explore the Heart of India</title>
+  <title>Delhi Travel Guide | Vibrant Delhi Experience</title>
   <style>
-    /* Delhi-Inspired Color Theme */
+    /* VIBRANT DELHI COLOR PALETTE */
     :root {
-      /* Colors inspired by Delhi's landmarks */
-      --redfort-red: #c53030;       /* Red Fort walls */
-      --qutub-sand: #d4a373;        /* Qutub Minar sandstone */
-      --india-gate-green: #588157;   /* India Gate lawns */
-      --lotus-white: #f8f9fa;        /* Lotus Temple marble */
-      --chandni-gold: #f6bd60;       /* Chandni Chowk market */
-      --jamamasjid-blue: #457b9d;     /* Jama Masjid tiles */
-      --metro-yellow: #ffd166;        /* Delhi Metro line */
-      --text-dark: #2b2d42;           /* Dark text for contrast */
+      --spice-orange: #FF7F11;       /* Chandni Chowk spices */
+      --auto-rickshaw-green: #00CC66; /* Delhi's green autos */
+      --metro-magenta: #FF00AA;      /* Magenta metro line */
+      --turmeric-yellow: #FFD700;    /* Street food turmeric */
+      --jama-masjid-blue: #0066CC;   /* Mosque dome blue */
+      --red-fort-crimson: #E32636;   /* Rich Red Fort color */
+      --text-dark: #222222;          /* High contrast text */
+      --lotus-white: #FFFFFF;        /* Clean white background */
     }
 
     body {
-      font-family: 'Segoe UI', 'Roboto', sans-serif;
+      font-family: 'Poppins', 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
       background-color: var(--lotus-white);
@@ -27,12 +26,17 @@
       line-height: 1.6;
     }
 
-    /* Header with Delhi skyline */
+    /* HEADER - Vibrant Delhi Skyline */
     header {
-      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                  url('https://images.unsplash.com/photo-1587474260584-136574528ed5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+      background: 
+        linear-gradient(45deg, 
+          var(--red-fort-crimson) 0%, 
+          var(--spice-orange) 50%, 
+          var(--turmeric-yellow) 100%),
+        url('https://images.unsplash.com/photo-1587474260584-136574528ed5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+      background-blend-mode: overlay;
       background-size: cover;
-      background-position: center 30%;
+      background-position: center;
       height: 500px;
       display: flex;
       flex-direction: column;
@@ -40,47 +44,31 @@
       align-items: center;
       text-align: center;
       color: white;
-      position: relative;
-    }
-
-    header::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 20px;
-      background: linear-gradient(90deg, 
-        var(--redfort-red) 0%, 
-        var(--qutub-sand) 25%, 
-        var(--india-gate-green) 50%, 
-        var(--jamamasjid-blue) 75%, 
-        var(--metro-yellow) 100%);
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     }
 
     header h1 {
-      font-size: 3.5rem;
+      font-size: 4rem;
       margin: 0;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
       font-weight: 800;
-      letter-spacing: 1px;
+      letter-spacing: -1px;
     }
 
     header p {
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       max-width: 700px;
-      margin: 25px auto;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+      margin: 20px auto;
+      font-weight: 500;
     }
 
-    /* Navigation inspired by metro signs */
+    /* NAVIGATION - Metro-inspired */
     nav {
-      background-color: var(--metro-yellow);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      background-color: var(--metro-magenta);
+      padding: 1rem 0;
       position: sticky;
       top: 0;
       z-index: 100;
-      padding: 1rem 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
 
     nav ul {
@@ -89,29 +77,29 @@
       list-style: none;
       padding: 0;
       margin: 0;
+      gap: 2rem;
       flex-wrap: wrap;
-      gap: 1.5rem;
     }
 
     nav a {
       text-decoration: none;
-      color: var(--text-dark);
+      color: white;
       font-weight: 700;
       font-size: 1.1rem;
       padding: 0.5rem 1rem;
       border-radius: 50px;
-      transition: all 0.3s ease;
+      transition: all 0.3s;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 1px;
     }
 
     nav a:hover {
-      background-color: var(--redfort-red);
-      color: white;
-      transform: translateY(-3px);
+      background-color: var(--turmeric-yellow);
+      color: var(--text-dark);
+      transform: scale(1.1);
     }
 
-    /* Main Content */
+    /* MAIN CONTENT */
     .container {
       max-width: 1200px;
       margin: 3rem auto;
@@ -120,9 +108,9 @@
 
     .container h2 {
       text-align: center;
+      font-size: 2.8rem;
+      color: var(--jama-masjid-blue);
       margin-bottom: 3rem;
-      color: var(--jamamasjid-blue);
-      font-size: 2.5rem;
       position: relative;
     }
 
@@ -130,13 +118,15 @@
       content: "";
       display: block;
       width: 100px;
-      height: 4px;
-      background: linear-gradient(90deg, var(--redfort-red), var(--metro-yellow));
+      height: 6px;
+      background: linear-gradient(90deg, 
+        var(--spice-orange), 
+        var(--metro-magenta));
       margin: 15px auto;
-      border-radius: 2px;
+      border-radius: 3px;
     }
 
-    /* Category Cards with Delhi themes */
+    /* CATEGORY CARDS - Vibrant and bold */
     .categories {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -146,16 +136,16 @@
 
     .category-card {
       background: white;
-      border-radius: 12px;
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      border-top: 5px solid var(--redfort-red);
+      border: 4px solid var(--auto-rickshaw-green);
     }
 
     .category-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      transform: translateY(-10px) rotate(2deg);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.25);
     }
 
     .category-card img {
@@ -163,20 +153,21 @@
       height: 220px;
       object-fit: cover;
       transition: transform 0.5s ease;
+      filter: saturate(1.2);
     }
 
     .category-card:hover img {
-      transform: scale(1.05);
+      transform: scale(1.1);
     }
 
     .card-content {
-      padding: 1.8rem;
+      padding: 2rem;
     }
 
     .category-card h3 {
-      color: var(--jamamasjid-blue);
+      color: var(--red-fort-crimson);
       margin-bottom: 1rem;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       font-weight: 700;
     }
 
@@ -188,47 +179,59 @@
 
     .btn {
       display: inline-block;
-      background-color: var(--redfort-red);
+      background: linear-gradient(45deg, 
+        var(--spice-orange), 
+        var(--red-fort-crimson));
       color: white;
-      padding: 0.8rem 1.8rem;
+      padding: 1rem 2rem;
       border-radius: 50px;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
       transition: all 0.3s;
       border: none;
       cursor: pointer;
       font-size: 1rem;
-      letter-spacing: 0.5px;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 15px rgba(255,127,17,0.4);
+      text-transform: uppercase;
     }
 
     .btn:hover {
-      background-color: var(--jamamasjid-blue);
       transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 25px rgba(227,38,54,0.6);
+      background: linear-gradient(45deg, 
+        var(--red-fort-crimson), 
+        var(--spice-orange));
     }
 
-    /* Footer inspired by Delhi's night lights */
+    /* FOOTER - Delhi at night */
     footer {
-      background: linear-gradient(135deg, var(--jamamasjid-blue), var(--redfort-red));
+      background: linear-gradient(135deg, 
+        var(--jama-masjid-blue), 
+        var(--metro-magenta));
       color: white;
       text-align: center;
       padding: 3rem 0;
       margin-top: 5rem;
+      font-size: 1.2rem;
     }
 
     footer p {
       margin: 0;
-      font-size: 1.1rem;
-      letter-spacing: 0.5px;
+      font-weight: 500;
+      letter-spacing: 1px;
     }
 
-    /* Responsive Design */
+    /* RESPONSIVE DESIGN */
     @media (max-width: 992px) {
       header h1 {
-        font-size: 3rem;
+        font-size: 3.2rem;
       }
       header p {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
+      }
+      .container h2 {
+        font-size: 2.4rem;
       }
     }
 
@@ -237,10 +240,10 @@
         height: 400px;
       }
       header h1 {
-        font-size: 2.5rem;
+        font-size: 2.6rem;
       }
       nav ul {
-        gap: 0.8rem;
+        gap: 1rem;
       }
       nav a {
         font-size: 0.9rem;
@@ -256,45 +259,50 @@
         height: 350px;
       }
       header h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
       }
       header p {
-        font-size: 1rem;
+        font-size: 1.1rem;
       }
       .container h2 {
         font-size: 2rem;
       }
+      .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+      }
     }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Header with Hero Image -->
+  <!-- HEADER -->
   <header>
-    <h1>Discover Delhi</h1>
-    <p>Experience the perfect blend of history, culture, and modernity in India's capital</p>
+    <h1>VIBRANT DELHI</h1>
+    <p>Where every color tells a story and every corner bursts with energy</p>
   </header>
 
-  <!-- Navigation -->
+  <!-- NAVIGATION -->
   <nav>
     <ul>
-      <li><a href="#historical">Heritage Walks</a></li>
+      <li><a href="#historical">Heritage</a></li>
       <li><a href="#markets">Bazaars</a></li>
-      <li><a href="#metro">Metro Explorer</a></li>
       <li><a href="#food">Street Food</a></li>
-      <li><a href="#hidden">Hidden Gems</a></li>
+      <li><a href="#metro">Metro</a></li>
+      <li><a href="#culture">Culture</a></li>
     </ul>
   </nav>
 
-  <!-- Main Content -->
+  <!-- MAIN CONTENT -->
   <div class="container">
-    <h2>The Soul of Delhi</h2>
+    <h2>EXPERIENCE DELHI'S VIBRANCE</h2>
     <div class="categories">
       <!-- Historical -->
       <div class="category-card">
         <img src="https://images.unsplash.com/photo-1524492412937-b33874b7a98f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Red Fort">
         <div class="card-content">
-          <h3>Mughal Heritage</h3>
-          <p>Walk through the pages of history at Red Fort, Humayun's Tomb, and Qutub Minar - UNESCO World Heritage Sites that showcase Delhi's glorious past.</p>
+          <h3>MUGHAL SPLENDOR</h3>
+          <p>Witness the grandeur of Delhi's historic monuments painted in vibrant hues that have stood the test of time.</p>
           <a href="#historical" class="btn">Explore History</a>
         </div>
       </div>
@@ -303,8 +311,8 @@
       <div class="category-card">
         <img src="https://images.unsplash.com/photo-1600711724564-526eda91a7f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Chandni Chowk">
         <div class="card-content">
-          <h3>Colorful Bazaars</h3>
-          <p>Get lost in the vibrant lanes of Chandni Chowk, Sarojini Nagar, and Dilli Haat - where tradition meets bargain shopping.</p>
+          <h3>COLORFUL BAZAARS</h3>
+          <p>Get lost in markets exploding with colors - from rainbow fabrics to golden spices and glittering jewelry.</p>
           <a href="#markets" class="btn">Shop Now</a>
         </div>
       </div>
@@ -313,17 +321,17 @@
       <div class="category-card">
         <img src="https://images.unsplash.com/photo-1566438480900-0609be27a4be?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Delhi Metro">
         <div class="card-content">
-          <h3>Metro Network</h3>
-          <p>Navigate Asia's second-largest metro system with our expert tips on tourist-friendly routes and stations.</p>
+          <h3>METRO RAINBOW</h3>
+          <p>Ride through Delhi on color-coded metro lines, each representing a different aspect of the city's personality.</p>
           <a href="#metro" class="btn">Plan Journey</a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
-    <p>© 2023 Delhi Travel Guide | Celebrate the Spirit of Dilli</p>
+    <p>© 2023 VIBRANT DELHI | A CELEBRATION OF COLOR AND CULTURE</p>
   </footer>
 </body>
 </html>
