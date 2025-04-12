@@ -1,10 +1,111 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My GitHub Website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delhi Metro Fare Calculator | Delhi Travel Guide</title>
+  <!-- Use the SAME CSS as your homepage for consistency -->
+  <style>
+    /* Paste ALL your homepage CSS here (to match styling) */
+    :root {
+      --primary: #f5f7fa;
+      --secondary: #e3f2fd;
+      --accent: #5c6bc0;
+      --text: #333333;
+    }
+    body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: var(--primary); }
+    header { background: linear-gradient(rgba(0,0,0,0.4), url('https://images.unsplash.com/photo-1566438480900-0609be27a4be?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); background-size: cover; height: 300px; display: flex; justify-content: center; align-items: center; color: white; text-align: center; }
+    nav { background: white; padding: 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    nav ul { display: flex; justify-content: center; list-style: none; padding: 0; gap: 20px; }
+    nav a { text-decoration: none; color: var(--text); font-weight: 600; }
+    .container { max-width: 800px; margin: 2rem auto; padding: 0 20px; }
+    .btn { background: var(--accent); color: white; padding: 10px 20px; border-radius: 50px; text-decoration: none; display: inline-block; margin-top: 1rem; }
+    /* Calculator-specific CSS */
+    .calculator { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    .form-group { margin-bottom: 1rem; }
+    select, input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
+    .result { margin-top: 2rem; padding: 1.5rem; background: var(--secondary); border-radius: 8px; text-align: center; font-size: 1.2rem; display: none; }
+    .result span { font-weight: bold; color: var(--accent); font-size: 1.5rem; }
+  </style>
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <p>This site is hosted with GitHub Pages!</p>
+  <!-- Header (Same as Homepage) -->
+  <header>
+    <div>
+      <h1>Delhi Metro Fare Calculator</h1>
+      <p>Calculate fares between any two stations in seconds</p>
+    </div>
+  </header>
+
+  <!-- Navigation (Same as Homepage) -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#historical">Historical Places</a></li>
+      <li><a href="#metro">Metro Guide</a></li>
+    </ul>
+  </nav>
+
+  <!-- Fare Calculator -->
+  <div class="container">
+    <div class="calculator">
+      <h2>Plan Your Metro Journey</h2>
+      <form id="fareForm">
+        <div class="form-group">
+          <label>From Station</label>
+          <select id="fromStation" required>
+            <option value="">Select Station</option>
+            <option value="10">Rajiv Chowk</option>
+            <option value="20">Kashmere Gate</option>
+            <option value="30">Hauz Khas</option>
+            <option value="40">New Delhi</option>
+            <option value="50">Central Secretariat</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>To Station</label>
+          <select id="toStation" required>
+            <option value="">Select Station</option>
+            <option value="10">Rajiv Chowk</option>
+            <option value="20">Kashmere Gate</option>
+            <option value="30">Hauz Khas</option>
+            <option value="40">New Delhi</option>
+            <option value="50">Central Secretariat</option>
+          </select>
+        </div>
+        <button type="button" onclick="calculateFare()" class="btn">Calculate Fare</button>
+      </form>
+      <div id="result" class="result">
+        Your fare: <span id="fareAmount">0</span> ₹
+        <p id="journeyInfo" style="margin-top: 10px;"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function calculateFare() {
+      const from = document.getElementById("fromStation").value;
+      const to = document.getElementById("toStation").value;
+      
+      if (!from || !to) {
+        alert("Please select both stations!");
+        return;
+      }
+      if (from === to) {
+        alert("From and To stations cannot be same!");
+        return;
+      }
+
+      // Mock calculation (replace with real logic if needed)
+      const distance = Math.abs(parseInt(to) - parseInt(from)) * 2; // 2km per zone
+      const fare = Math.min(10 + distance * 5, 60); // ₹10 base + ₹5/km (max ₹60)
+
+      // Display result
+      document.getElementById("fareAmount").textContent = fare;
+      document.getElementById("journeyInfo").textContent = 
+        `Approx ${distance} km | ${Math.round(distance * 2.5)} mins travel time`;
+      document.getElementById("result").style.display = "block";
+    }
+  </script>
 </body>
 </html>
