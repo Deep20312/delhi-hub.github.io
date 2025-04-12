@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delhi Travel Guide | Explore the Heart of India</title>
+  <style>
+    /* Delhi-Inspired Color Theme */
+    :root {
+      /* Colors inspired by Delhi's landmarks */
+      --redfort-red: #c53030;       /* Red Fort walls */
+      --qutub-sand: #d4a373;        /* Qutub Minar sandstone */
+      --india-gate-green: #588157;   /* India Gate lawns */
+      --lotus-white: #f8f9fa;        /* Lotus Temple marble */
+      --chandni-gold: #f6bd60;       /* Chandni Chowk market */
+      --jamamasjid-blue: #457b9d;     /* Jama Masjid tiles */
+      --metro-yellow: #ffd166;        /* Delhi Metro line */
+      --text-dark: #2b2d42;           /* Dark text for contrast */
+    }
+
+    body {
+      font-family: 'Segoe UI', 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--lotus-white);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* Header with Delhi skyline */
+    header {
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                  url('https://images.unsplash.com/photo-1587474260584-136574528ed5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center 30%;
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 20px;
+      background: linear-gradient(90deg, 
+        var(--redfort-red) 0%, 
+        var(--qutub-sand) 25%, 
+        var(--india-gate-green) 50%, 
+        var(--jamamasjid-blue) 75%, 
+        var(--metro-yellow) 100%);
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      margin: 0;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1.4rem;
+      max-width: 700px;
+      margin: 25px auto;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Navigation inspired by metro signs */
+    nav {
+      background-color: var(--metro-yellow);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 1rem 0;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    nav a:hover {
+      background-color: var(--redfort-red);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    /* Main Content */
+    .container {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+
+    .container h2 {
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--jamamasjid-blue);
+      font-size: 2.5rem;
+      position: relative;
+    }
+
+    .container h2::after {
+      content: "";
+      display: block;
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--redfort-red), var(--metro-yellow));
+      margin: 15px auto;
+      border-radius: 2px;
+    }
+
+    /* Category Cards with Delhi themes */
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 4rem 0;
+    }
+
+    .category-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border-top: 5px solid var(--redfort-red);
+    }
+
+    .category-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .category-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .category-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .card-content {
+      padding: 1.8rem;
+    }
+
+    .category-card h3 {
+      color: var(--jamamasjid-blue);
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .category-card p {
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--redfort-red);
+      color: white;
+      padding: 0.8rem 1.8rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+    }
+
+    .btn:hover {
+      background-color: var(--jamamasjid-blue);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Footer inspired by Delhi's night lights */
+    footer {
+      background: linear-gradient(135deg, var(--jamamasjid-blue), var(--redfort-red));
+      color: white;
+      text-align: center;
+      padding: 3rem 0;
+      margin-top: 5rem;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      header h1 {
+        font-size: 3rem;
+      }
+      header p {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        height: 400px;
+      }
+      header h1 {
+        font-size: 2.5rem;
+      }
+      nav ul {
+        gap: 0.8rem;
+      }
+      nav a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+      }
+      .categories {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 576px) {
+      header {
+        height: 350px;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      .container h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with Hero Image -->
+  <header>
+    <h1>Discover Delhi</h1>
+    <p>Experience the perfect blend of history, culture, and modernity in India's capital</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#historical">Heritage Walks</a></li>
+      <li><a href="#markets">Bazaars</a></li>
+      <li><a href="#metro">Metro Explorer</a></li>
+      <li><a href="#food">Street Food</a></li>
+      <li><a href="#hidden">Hidden Gems</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h2>The Soul of Delhi</h2>
+    <div class="categories">
+      <!-- Historical -->
+      <div class="category-card">
+        <img src="https://images.unsplash.com/photo-1524492412937-b33874b7a98f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Red Fort">
+        <div class="card-content">
+          <h3>Mughal Heritage</h3>
+          <p>Walk through the pages of history at Red Fort, Humayun's Tomb, and Qutub Minar - UNESCO World Heritage Sites that showcase Delhi's glorious past.</p>
+          <a href="#historical" class="btn">Explore History</a>
+        </div>
+      </div>
+
+      <!-- Markets -->
+      <div class="category-card">
+        <img src="https://images.unsplash.com/photo-1600711724564-526eda91a7f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Chandni Chowk">
+        <div class="card-content">
+          <h3>Colorful Bazaars</h3>
+          <p>Get lost in the vibrant lanes of Chandni Chowk, Sarojini Nagar, and Dilli Haat - where tradition meets bargain shopping.</p>
+          <a href="#markets" class="btn">Shop Now</a>
+        </div>
+      </div>
+
+      <!-- Metro -->
+      <div class="category-card">
+        <img src="https://images.unsplash.com/photo-1566438480900-0609be27a4be?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Delhi Metro">
+        <div class="card-content">
+          <h3>Metro Network</h3>
+          <p>Navigate Asia's second-largest metro system with our expert tips on tourist-friendly routes and stations.</p>
+          <a href="#metro" class="btn">Plan Journey</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2023 Delhi Travel Guide | Celebrate the Spirit of Dilli</p>
+  </footer>
+</body>
+</html>
