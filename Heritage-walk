@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delhi Heritage Walks | Explore Historic Trails</title>
+    <style>
+        /* CSS Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        
+        h2 {
+            color: #000DFF;
+            border-bottom: 2px solid #000DFF;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        
+        .walk-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .walk-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: calc(50% - 20px);
+            transition: transform 0.3s;
+        }
+        
+        .walk-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .walk-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .walk-content {
+            padding: 15px;
+        }
+        
+        .walk-title {
+            font-size: 1.3em;
+            margin: 0 0 10px;
+            color: #000DFF;
+        }
+        
+        .walk-highlights {
+            font-weight: bold;
+            color: #555;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background: #eee;
+            border-radius: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .walk-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Delhi Heritage Walks</h1>
+        <p>Explore the rich history and culture of India's capital through these curated trails</p>
+    </header>
+
+    <section>
+        <h2>Popular Heritage Walks in Delhi</h2>
+        <div class="walk-container">
+            <!-- Walk 1 -->
+            <div class="walk-card">
+                <img src="https://example.com/old-delhi.jpg" alt="Old Delhi Heritage Walk" class="walk-image">
+                <div class="walk-content">
+                    <h3 class="walk-title">1. Old Delhi (Shahjahanabad) Walk</h3>
+                    <p><strong>Route:</strong> Red Fort → Jama Masjid → Chandni Chowk → Paranthe Wali Gali</p>
+                    <p class="walk-highlights">Highlights: Mughal architecture, street food, bustling markets</p>
+                </div>
+            </div>
+            
+            <!-- Walk 2 -->
+            <div class="walk-card">
+                <img src="https://example.com/mehrauli.jpg" alt="Mehrauli Archaeological Park" class="walk-image">
+                <div class="walk-content">
+                    <h3 class="walk-title">2. Mehrauli Archaeological Park</h3>
+                    <p><strong>Route:</strong> Qutub Minar → Jamali Kamali → Rajon Ki Baoli</p>
+                    <p class="walk-highlights">Highlights: Ancient ruins, stepwells, lush greenery</p>
+                </div>
+            </div>
+            
+            <!-- Walk 3 -->
+            <div class="walk-card">
+                <img src="https://example.com/nizamuddin.jpg" alt="Nizamuddin Basti Walk" class="walk-image">
+                <div class="walk-content">
+                    <h3 class="walk-title">3. Nizamuddin Basti Walk</h3>
+                    <p><strong>Route:</strong> Humayun's Tomb → Nizamuddin Dargah → Ghalib's Tomb</p>
+                    <p class="walk-highlights">Highlights: Sufi culture, qawwali, Mughal architecture</p>
+                </div>
+            </div>
+            
+            <!-- Walk 4 -->
+            <div class="walk-card">
+                <img src="https://example.com/lutyens-delhi.jpg" alt="Lutyens' Delhi Walk" class="walk-image">
+                <div class="walk-content">
+                    <h3 class="walk-title">4. Lutyens' Delhi Walk</h3>
+                    <p><strong>Route:</strong> Rashtrapati Bhavan → India Gate → Parliament House</p>
+                    <p class="walk-highlights">Highlights: Colonial buildings, political landmarks</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>More Heritage Trails</h2>
+        <ul>
+            <li><strong>Feroz Shah Kotla Walk:</strong> Tughlaq-era fort with djinn folklore</li>
+            <li><strong>Hauz Khas Village Walk:</strong> Medieval ruins + artsy cafés</li>
+            <li><strong>Tughlaqabad Fort Walk:</strong> Massive 14th-century fortress</li>
+            <li><strong>Chandni Chowk Night Walk:</strong> Illuminated markets & food trail</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Best Time for Walks</h2>
+        <p>✅ <strong>October to March</strong> (pleasant weather)<br>
+           ⏰ <strong>Early mornings or late afternoons</strong> (avoid heat)</p>
+    </section>
+
+    <footer>
+        <p>© 2023 Delhi Heritage Walks | Powered by [Your Website Name]</p>
+        <p>Contact: info@yourwebsite.com | Follow us on social media</p>
+    </footer>
+</body>
+</html>
